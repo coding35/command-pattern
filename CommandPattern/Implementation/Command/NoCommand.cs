@@ -6,9 +6,9 @@ namespace CommandPattern.Implementation.Command;
 /// A null object is useful when you don’t have a meaningful object to return,
 /// and yet you want to remove the responsibility for handling null from the client.
 /// </summary>
-public class NoCommand : ICommand
+public class NoCommand : Command
 {
-    public void Execute()
+    public override void Execute()
     {
         // Do nothing
     }

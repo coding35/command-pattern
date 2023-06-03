@@ -62,9 +62,9 @@ public abstract class Control
         return Clicked;
     }
     
-    
     public Control GetControl()
     {
         return this;
     }
+    
 }

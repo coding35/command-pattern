@@ -16,6 +16,21 @@ public class ActionControl
     {
         _commands!.Add(commandList() ?? new NoCommand());
     }
+    
+    public void RemoveCommand(ICommand? command)
+    {
+        _commands!.Remove(command!);
+    }
+    
+    public void RemoveCommandList(Func<ICommand?> commandList)
+    {
+        _commands!.Remove(commandList() ?? new NoCommand());
+    }
+    
+    public void RemoveAllCommands()
+    {
+        _commands?.Clear();
+    }
 
     public void OnPageLoad()
     {
@@ -23,5 +38,15 @@ public class ActionControl
         {
             command.Execute();
         }
+    }
+    
+    public void OnPageUnload()
+    {
+        RemoveAllCommands();
+    }
+
+    public List<ICommand>? GetCommands()
+    {
+        return _commands;
     }
 }

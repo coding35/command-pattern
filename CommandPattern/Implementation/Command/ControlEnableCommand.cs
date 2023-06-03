@@ -4,7 +4,7 @@ using CommandPattern.Interface;
 
 namespace CommandPattern.Implementation.Command;
 
-public class ControlEnableCommand : ICommand
+public class ControlEnableCommand : Command
 {
     private readonly Model.Abstract.Control _control;
     
@@ -13,7 +13,7 @@ public class ControlEnableCommand : ICommand
         _control = control;
     }
     
-    public void Execute()
+    public override void Execute()
     {
         _control.Enable();
     }

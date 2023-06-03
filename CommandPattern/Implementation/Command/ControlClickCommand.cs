@@ -1,8 +1,6 @@
-using CommandPattern.Interface;
-
 namespace CommandPattern.Implementation.Command;
 
-public class ControlClickCommand : ICommand
+public class ControlClickCommand : Command
 {
     private readonly Model.Abstract.Control _control;
     
@@ -11,7 +9,7 @@ public class ControlClickCommand : ICommand
         _control = control;
     }
     
-    public void Execute()
+    public override void Execute()
     {
         _control.Click();
     }

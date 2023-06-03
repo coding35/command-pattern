@@ -3,7 +3,7 @@ using CommandPattern.Model.Abstract;
 
 namespace CommandPattern.Implementation.Command;
 
-public class ControlHiddenCommand : ICommand
+public class ControlHiddenCommand : Command
 {
     private readonly Model.Abstract.Control _control;
     
@@ -12,7 +12,7 @@ public class ControlHiddenCommand : ICommand
         _control = control;
     }
     
-    public void Execute()
+    public override void Execute()
     {
         _control.Hide();
     }
